@@ -43,6 +43,12 @@ export default function RootLayout({
             >
               Calender
             </Link>
+            <Link
+              href="/co-workers"
+              className="text-sm font-semibold text-zinc-800 transition hover:text-emerald-700"
+            >
+              Co-workers
+            </Link>
           </nav>
         </header>
         <div className="flex-1">{children}</div>
