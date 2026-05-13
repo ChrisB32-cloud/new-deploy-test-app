@@ -7,12 +7,12 @@ services:
       dockerfile: Dockerfile
     container_name: next-app
     ports:
-      - "3000:3000"
+      - "${server.PORT_CHRISTEST}:${server.PORT_CHRISTEST}"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:${server.PORT_CHRISTEST}/"]
       interval: 30s
       # timeout: 3s
       retries: 3
