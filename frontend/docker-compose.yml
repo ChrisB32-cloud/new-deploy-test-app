@@ -9,10 +9,10 @@ services:
     environment:
       - NODE_ENV=production
     ports:
-      - ${server.PORT_CHRISTEST:-3000}:${server.PORT_CHRISTEST:-3000}
+      - ${server_PORT_CHRISTEST:-3000}:${server_PORT_CHRISTEST:-3000}
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:${server.PORT_CHRISTEST:-3000}/"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:${server_PORT_CHRISTEST:-3000}/"]
       interval: 30s
       # timeout: 3s
       retries: 3
